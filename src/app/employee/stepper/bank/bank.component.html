@@ -1,1 +1,59 @@
-<p>Bank works!</p>
+<body>
+    <div class="container">
+        <div class="title">Bank Details</div>
+            <div class="content">
+                <form [formGroup]="bankdetails">
+
+                    <div class="user-details">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Bank Name</mat-label>
+                                <input matInput name="bankname" type="text" formControlName="bankname">
+                                    <mat-error *ngIf="bankdetails.controls['bankname'].hasError('required')">
+                                        The Bank Name is <strong>required</strong>...
+                                    </mat-error>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Account Name</mat-label>
+                                <input matInput name="accountname" type="text" formControlName="accountname">
+                                    <mat-error *ngIf="bankdetails.controls['accountname'].hasError('required')">
+                                        The Account Name is <strong>required</strong>...
+                                    </mat-error>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Bank Account Number</mat-label>
+                                <input matInput name="banknumber" type="text" formControlName="banknumber">
+                                    <mat-error *ngIf="bankdetails.controls['banknumber'].hasError('required')">
+                                        The Account Number is <strong>required</strong>...
+                                    </mat-error>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>IFSC Code</mat-label>
+                                <input matInput name="IFSCcode" type="text" formControlName="IFSCcode">
+                                    <mat-error *ngIf="bankdetails.controls['IFSCcode'].hasError('required')">
+                                        The code field is <strong>required</strong>...
+                                    </mat-error>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Aadhaar Card Number</mat-label>
+                                <input matInput name="aadharnumber" type="text" formControlName="aadharnumber">
+                                    <mat-error *ngIf="bankdetails.controls['aadharnumber'].hasError('required')">
+                                        The Aadhar Card Number is <strong>required</strong>...
+                                    </mat-error>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>PAN CARD Number</mat-label>
+                                <input matInput name="pannumber" type="text" formControlName="pannumber">
+                                    <mat-error *ngIf="bankdetails.controls['pannumber'].hasError('required')">
+                                        The Pan Card Number is <strong>required</strong>...
+                                    </mat-error>
+                        </mat-form-field><pre></pre>
+                    </div>
+                </form>
+            </div>
+    </div>
+</body>

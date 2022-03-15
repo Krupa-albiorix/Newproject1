@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-personal',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalComponent implements OnInit {
 
-  constructor() { }
+  personaldetails!: FormGroup;
+  checked = false;
 
-  ngOnInit(): void {
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.personaldetails = this._formBuilder.group({
+      firstname: ['', Validators.required],
+      middlename: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', Validators.required],
+      mobilenumber: ['', Validators.required],
+      contactnumber: ['', Validators.required],
+      date: ['', Validators.required],
+      uploadimg: ['', Validators.required],
+      presentaddress: ['', Validators.required],
+      permanentaddress: ['', Validators.required]
+    });
   }
-
 }
