@@ -1,0 +1,22 @@
+<p>stepper works!</p>
+
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="bankdetails">
+        <app-personal></app-personal>
+    </mat-step>
+    <mat-step>
+        <app-bank></app-bank>
+    </mat-step>
+    <mat-step>
+        <app-professional></app-professional>
+    </mat-step>
+    <mat-step>
+        <app-education></app-education>
+    </mat-step>
+    <mat-step>
+        <app-experience></app-experience>
+    </mat-step>
+    <mat-step>
+        <app-current-organization></app-current-organization>
+    </mat-step>
+</mat-stepper>
