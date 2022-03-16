@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-current-organization',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentOrganizationComponent implements OnInit {
 
-  constructor() { }
+  current_organization_details!: FormGroup;
 
-  ngOnInit(): void {
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.current_organization_details = this._formBuilder.group({
+      joining_date: ['', Validators.required],
+      next_appraisal: ['', Validators.required],
+      current_ctc: ['', Validators.required]
+    });
   }
 
 }

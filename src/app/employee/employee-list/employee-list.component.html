@@ -1,1 +1,31 @@
-<p>employee-list works!</p>
+<div class="view-port">
+    <div class="container">
+        <div class="title">Employee Management System</div>
+        <div class="content">
+
+            <button mat-raised-button color="warn" [routerLink]="['/stepper']">Employee+</button>
+
+            <div class="container">
+
+                <div class="user-details">
+                    <mat-label>Name</mat-label>
+                    <mat-label>Department</mat-label>
+                    <mat-label>Designation</mat-label>
+                    <mat-label>Email</mat-label>
+                    <mat-label>Mobile Number</mat-label>
+                    <mat-label>Resume</mat-label>
+                </div>
+
+                <div class="user-details">
+                    <mat-paginator 
+                    [length]="100" 
+                    [pageSize]="0" 
+                    [pageSizeOptions]="[10, 50, 100]" 
+                    aria-label="Select page">
+                    </mat-paginator>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

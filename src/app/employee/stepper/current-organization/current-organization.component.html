@@ -1,1 +1,32 @@
-<p>current-organization works!</p>
+<div class="view-port">
+    <div class="container">
+        <div class="title">Current Organization Details</div>
+            <div class="content">
+                <form [formGroup]="current_organization_details">
+
+                    <div class="user-details">
+                        
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Joining Date</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="joining_date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Next Appraisal Date</mat-label>
+                                <input matInput [matDatepicker]="picker2" formControlName="next_appraisal">
+                                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Current CTC</mat-label>
+                                <input matInput name="current_ctc" value="0" type="text" formControlName="current_ctc">
+                        </mat-form-field><pre></pre>
+
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>

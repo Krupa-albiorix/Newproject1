@@ -1,1 +1,58 @@
-<p>education works!</p>
+<div class="view-port">
+    <div class="container">
+        <div class="title">Educational Details</div>
+        <div class="content">
+            <form [formGroup]="educationdetails">
+                
+                <button mat-mini-fab (click)="addDetail()">
+                    <mat-icon aria-hidden="false">add_circle</mat-icon>
+                </button>
+
+                <div class="container">
+
+                <div class="user-details">
+                    <mat-label appearance="fill">Education Name</mat-label>
+                    <mat-label>University Name</mat-label>
+                    <mat-label>Result</mat-label>
+                    <mat-label>Year Of Passing</mat-label>
+                    <mat-label>Action</mat-label>
+                </div>
+
+                <div class="user-details">
+                    <ng-container formArrayName="details">
+                        <ng-container *ngFor="let detailForm of details.controls; let i = index">
+                            <div [formGroupName]="i">
+                                
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Education Name</mat-label>
+                                        <input matInput name="education_name" type="text" formControlName="education_name">
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill">
+                                    <mat-label>University Name</mat-label>
+                                        <input matInput name="university_name" type="text" formControlName="university_name">
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Result</mat-label>
+                                        <input matInput name="result" type="text" formControlName="result">
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Year Of Passing</mat-label>
+                                        <input matInput name="passing_year" type="number" formControlName="passing_year">
+                                </mat-form-field>
+                                
+                                <div appearance="fill">
+                                    <mat-icon (click)="deleteDetail(i)">remove_circle</mat-icon>
+                                </div>
+                                
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

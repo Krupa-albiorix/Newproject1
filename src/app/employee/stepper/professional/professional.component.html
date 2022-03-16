@@ -1,1 +1,60 @@
-<p>professional works!</p>
+<div class="view-port">
+    <div class="container">
+        <div class="title">Professional Details</div>
+            <div class="content">
+                <form [formGroup]="professionaldetails">
+
+                    <div class="user-details">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Designation</mat-label>
+                                <input matInput name="designation" type="text" formControlName="designation">
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Department</mat-label>
+                                <input matInput name="department" type="text" formControlName="department">
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Experience</mat-label>
+                                <mat-form-field>
+                                    <mat-label>Years</mat-label>
+                                        <mat-select [(value)]="selectedYear" formControlName="years">
+                                            <mat-option></mat-option>
+                                            <mat-option [value]="option.value" *ngFor="let option of years">{{ option.viewValue }}</mat-option>
+                                        </mat-select>
+                                </mat-form-field><pre></pre>
+                                <mat-form-field>
+                                    <mat-label>Months</mat-label>
+                                        <mat-select formControlName="months">
+                                            <mat-option></mat-option>
+                                            <mat-option [value]="option.value" *ngFor="let option of months">{{ option.viewValue }}</mat-option>
+                                        </mat-select>
+                                </mat-form-field>
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Current Location</mat-label>
+                                <input matInput name="current_location" type="text" formControlName="current_location">
+                        </mat-form-field><pre></pre>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Skills</mat-label>
+                            <mat-select formControlName="skill">
+                                <mat-option></mat-option>
+                                <mat-option value="1">JAVA</mat-option>
+                                <mat-option value="1">Python</mat-option>
+                                <mat-option value="1">ASP.Net</mat-option>
+                            </mat-select>
+                        </mat-form-field><pre></pre>
+
+                        <div>
+                            <input type="file" class="form-field" placeholder="Upload Resume" name="uploadimg" accept=".pdf" formControlName="uploadpdf">
+                            <h6>Only PDF file are allowed.</h6>    
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>

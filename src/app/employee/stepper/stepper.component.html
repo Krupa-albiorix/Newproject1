@@ -1,22 +1,28 @@
 <p>stepper works!</p>
-
-<mat-stepper [linear]="isLinear" #stepper>
+<mat-icon >remove_circle</mat-icon>
+<mat-stepper labelPosition="bottom" #stepper>
     <mat-step [stepControl]="bankdetails">
+        <ng-template matStepLabel>Personal Detail</ng-template>
         <app-personal></app-personal>
     </mat-step>
     <mat-step>
+        <ng-template matStepLabel>Bank Detail</ng-template>
         <app-bank></app-bank>
     </mat-step>
     <mat-step>
+        <ng-template matStepLabel>Professional Detail</ng-template>
         <app-professional></app-professional>
     </mat-step>
     <mat-step>
+        <ng-template matStepLabel>Education Detail</ng-template>
         <app-education></app-education>
     </mat-step>
     <mat-step>
+        <ng-template matStepLabel>Experience Detail</ng-template>
         <app-experience></app-experience>
     </mat-step>
     <mat-step>
+        <ng-template matStepLabel>Current Organization Detail</ng-template>
         <app-current-organization></app-current-organization>
     </mat-step>
 </mat-stepper>
