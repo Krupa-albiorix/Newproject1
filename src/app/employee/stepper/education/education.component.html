@@ -4,8 +4,8 @@
         <div class="content">
             <form [formGroup]="educationdetails">
                 
-                <button mat-mini-fab (click)="addDetail()">
-                    <mat-icon aria-hidden="false">add_circle</mat-icon>
+                <button mat-raised-button color="primary" (click)="addDetail()">
+                    <mat-icon>add</mat-icon> Add Education
                 </button>
 
                 <div class="container">
@@ -21,8 +21,8 @@
                 <div class="user-details">
                     <ng-container formArrayName="details">
                         <ng-container *ngFor="let detailForm of details.controls; let i = index">
-                            <div [formGroupName]="i">
-                                
+                            <div class="user-class" [formGroupName]="i">
+                                <div >
                                 <mat-form-field appearance="fill">
                                     <mat-label>Education Name</mat-label>
                                         <input matInput name="education_name" type="text" formControlName="education_name">
@@ -42,9 +42,11 @@
                                     <mat-label>Year Of Passing</mat-label>
                                         <input matInput name="passing_year" type="number" formControlName="passing_year">
                                 </mat-form-field>
-                                
-                                <div appearance="fill">
-                                    <mat-icon (click)="deleteDetail(i)">remove_circle</mat-icon>
+                            </div>
+                                <div appearance="fill" >
+                                    <mat-icon (click)="deleteDetail(i)" color="primary">save</mat-icon>
+                                    <mat-icon (click)="deleteDetail(i)" color="warn">clear</mat-icon>
+                                    <mat-icon (click)="deleteDetail(i)" color="warn">delete</mat-icon>
                                 </div>
                                 
                             </div>

@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { StepperComponent } from './stepper/stepper.component';
+import { ButtonComponent } from './stepper/button/button.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { StepperComponent } from './stepper/stepper.component';
     CurrentOrganizationComponent,
     EmployeeListComponent,
     StepperComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,

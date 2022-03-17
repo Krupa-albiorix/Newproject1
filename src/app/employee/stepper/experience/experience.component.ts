@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-experience',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  constructor() { }
+  experiencedetails!: FormGroup;
+  detailForm! : FormGroup;
 
-  ngOnInit(): void {
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.experiencedetails = this._formBuilder.group({
+      details: this._formBuilder.array([])
+    });
+  }
+
+  get details() {
+    return this.experiencedetails.controls["details"] as FormArray;
+  }
+
+  addDetail() {
+    this.detailForm = this._formBuilder.group({
+      company_name: ['', Validators.required],
+      position: ['', Validators.required],
+      total_year: ['', Validators.required],
+      last_ctc: ['', Validators.required],
+      delete: ['']
+    });
+    this.details.push(this.detailForm);
+  }
+
+  deleteDetail(detailIndex: number) {
+    this.details.removeAt(detailIndex);
   }
 
 }

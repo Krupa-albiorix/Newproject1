@@ -3,7 +3,7 @@
         <div class="title">Employee Management System</div>
         <div class="content">
 
-            <button mat-raised-button color="warn" [routerLink]="['/stepper']">Employee+</button>
+            <button mat-raised-button color="warn" [routerLink]="['/stepper']"><mat-icon>person_add</mat-icon> Employee</button>
 
             <div class="container">
 
@@ -16,7 +16,7 @@
                     <mat-label>Resume</mat-label>
                 </div>
 
-                <div class="user-details">
+                <div class="user-data">
                     <mat-paginator 
                     [length]="100" 
                     [pageSize]="0" 

@@ -1,28 +1,32 @@
-<p>stepper works!</p>
-<mat-icon >remove_circle</mat-icon>
 <mat-stepper labelPosition="bottom" #stepper>
-    <mat-step [stepControl]="bankdetails">
+    <mat-step [stepControl]="personaldetails">
         <ng-template matStepLabel>Personal Detail</ng-template>
         <app-personal></app-personal>
+        <app-button></app-button>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="bankdetails">
         <ng-template matStepLabel>Bank Detail</ng-template>
         <app-bank></app-bank>
+        <app-button></app-button>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="professionaldetails">
         <ng-template matStepLabel>Professional Detail</ng-template>
         <app-professional></app-professional>
+        <app-button></app-button>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="educationdetails">
         <ng-template matStepLabel>Education Detail</ng-template>
         <app-education></app-education>
+        <app-button></app-button>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="experiencedetails">
         <ng-template matStepLabel>Experience Detail</ng-template>
         <app-experience></app-experience>
+        <app-button></app-button>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="current_organization_details">
         <ng-template matStepLabel>Current Organization Detail</ng-template>
         <app-current-organization></app-current-organization>
+        <app-button></app-button>
     </mat-step>
 </mat-stepper>

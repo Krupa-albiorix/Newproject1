@@ -38,7 +38,7 @@
                                 <input matInput name="current_location" type="text" formControlName="current_location">
                         </mat-form-field><pre></pre>
 
-                        <mat-form-field class="example-full-width">
+                        <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Skills</mat-label>
                             <mat-select formControlName="skill">
                                 <mat-option></mat-option>
@@ -48,8 +48,13 @@
                             </mat-select>
                         </mat-form-field><pre></pre>
 
-                        <div>
-                            <input type="file" class="form-field" placeholder="Upload Resume" name="uploadimg" accept=".pdf" formControlName="uploadpdf">
+                        <div class="button-center">
+                            <button mat-raised-button color="primary">
+                                <label for="file-upload">
+                                    Upload Resume
+                                </label>
+                            </button>
+                            <input id="file-upload" type="file" class="form-field" name="uploadimg" accept=".pdf" formControlName="uploadpdf">
                             <h6>Only PDF file are allowed.</h6>    
                         </div>
 

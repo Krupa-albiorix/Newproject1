@@ -7,6 +7,7 @@
 
 .view-port {
     height: 50vh;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -27,12 +28,22 @@
     font-weight: 50px;
     text-align: center;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.content button {
+    size: 15px;
+    bottom: 20px;
 }
 
 .content .user-details {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content:space-around;
     margin: 20px 0 12px 0;
+}
+
+.container .user-data {
+    font-size: 10px;
+    display: flex;
 }

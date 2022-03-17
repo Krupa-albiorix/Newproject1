@@ -6,7 +6,8 @@
 }
 
 .view-port {
-    height: 50vh;
+    height: 70vh;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -30,9 +31,24 @@
     margin-bottom: 30px;
 }
 
+.content form button {
+        size: 15px;
+        bottom: 20px;
+}
+
 .content form .user-details {
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-evenly;
+    justify-content:space-around;
     margin: 20px 0 12px 0;
+}
+
+form .user-details .example-full-width {
+    margin-bottom: 15px;
+    width: calc(100% / 5 - 40px);
+}
+
+form .user-details .user-class {
+    display: flex;
+    align-items: center;
 }

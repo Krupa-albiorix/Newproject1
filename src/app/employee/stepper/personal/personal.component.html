@@ -41,10 +41,15 @@
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field><pre></pre>
-  
-                    <div>
-                        <input type="file" class="form-field" name="uploadimg" accept="image/png, image/jpeg" formControlName="uploadimg">
-                        <h6>Only JPG OR PNG file are allowed.</h6>    
+
+                    <div class="button-center">
+                        <button mat-raised-button color="primary">
+                            <label for="file-upload">
+                                Upload Image
+                            </label>
+                        </button>
+                            <input id="file-upload" type="file" name="uploadimg" accept="image/png, image/jpeg" formControlName="uploadimg"/>
+                            <h6>Only JPG OR PNG file are allowed.</h6>    
                     </div>
 
                     <mat-form-field class="form-field" appearance="fill">
