@@ -39,7 +39,10 @@
 
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Aadhaar Card Number</mat-label>
-                                <input matInput name="aadharnumber" type="text" formControlName="aadharnumber">
+                                <input matInput mask='0000-0000-0000' name="aadharnumber" type="text" formControlName="aadharnumber">
+                                    <mat-error *ngIf="bankdetails.controls['aadharnumber'].hasError('pattern')">
+                                        Please enter a valid aadhar number...
+                                    </mat-error>
                                     <mat-error *ngIf="bankdetails.controls['aadharnumber'].hasError('required')">
                                         The Aadhar Card Number is <strong>required</strong>...
                                     </mat-error>
@@ -48,6 +51,9 @@
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>PAN CARD Number</mat-label>
                                 <input matInput name="pannumber" type="text" formControlName="pannumber">
+                                    <mat-error *ngIf="bankdetails.controls['pannumber'].hasError('pattern')">
+                                        Please enter a valid PAN number...
+                                    </mat-error>
                                     <mat-error *ngIf="bankdetails.controls['pannumber'].hasError('required')">
                                         The Pan Card Number is <strong>required</strong>...
                                     </mat-error>

@@ -4,7 +4,7 @@
         <div class="content">
             <form [formGroup]="experiencedetails">
                 
-                <button mat-raised-button color="primary" (click)="addDetail()">
+                <button mat-raised-button color="primary" (click)="addExp()">
                     <mat-icon>add</mat-icon> Add Education
                 </button>
 
@@ -26,21 +26,33 @@
                                 <mat-form-field appearance="fill">
                                     <mat-label>Company Name</mat-label>
                                         <input matInput name="company_name" type="text" formControlName="company_name">
+                                            <mat-error *ngIf="detailForm.get('company_name')?.hasError('required')">
+                                                Company name is <strong>required</strong>...
+                                            </mat-error>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="fill">
                                     <mat-label>Position</mat-label>
                                         <input matInput name="position" type="text" formControlName="position">
+                                            <mat-error *ngIf="detailForm.get('position')?.hasError('required')">
+                                                Position is <strong>required</strong>...
+                                            </mat-error>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="fill">
                                     <mat-label>Total Year</mat-label>
                                         <input matInput name="total_year" type="number" formControlName="total_year">
+                                            <mat-error *ngIf="detailForm.get('total_year')?.hasError('required')">
+                                                Year total is <strong>required</strong>...
+                                            </mat-error>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="fill">
                                     <mat-label>Last Ctc</mat-label>
                                         <input matInput name="last_ctc" type="number" formControlName="last_ctc">
+                                            <mat-error *ngIf="detailForm.get('last_ctc')?.hasError('required')">
+                                                Last CTC is <strong>required</strong>...
+                                            </mat-error>
                                 </mat-form-field>
                             </div>
                                 <div appearance="fill" >

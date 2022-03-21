@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -7,19 +7,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./bank.component.scss']
 })
 export class BankComponent implements OnInit {
-  
-  bankdetails!: FormGroup;
+  @Input() bankdetails: any;
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.bankdetails = this._formBuilder.group({
-      bankname: ['', Validators.required],
-      accountname: ['', Validators.required],
-      banknumber: ['', Validators.required],
-      IFSCcode: ['', Validators.required],
-      aadharnumber: ['', Validators.required],
-      pannumber: ['', Validators.required]
-    });
+    console.log(this.bankdetails);
+    
   }
 }

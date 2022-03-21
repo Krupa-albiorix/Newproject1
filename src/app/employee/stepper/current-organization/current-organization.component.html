@@ -11,6 +11,9 @@
                                 <input matInput [matDatepicker]="picker" formControlName="joining_date">
                                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                     <mat-datepicker #picker></mat-datepicker>
+                                    <mat-error *ngIf="current_organization_details.controls['joining_date'].hasError('required')">
+                                        Joining date is <strong>required</strong>...
+                                    </mat-error>
                         </mat-form-field><pre></pre>
 
                         <mat-form-field class="example-full-width" appearance="fill">
@@ -18,11 +21,17 @@
                                 <input matInput [matDatepicker]="picker2" formControlName="next_appraisal">
                                     <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                                     <mat-datepicker #picker2></mat-datepicker>
+                                    <mat-error *ngIf="current_organization_details.controls['next_appraisal'].hasError('required')">
+                                        Date is <strong>required</strong>...
+                                    </mat-error>
                         </mat-form-field><pre></pre>
 
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Current CTC</mat-label>
                                 <input matInput name="current_ctc" value="0" type="text" formControlName="current_ctc">
+                                <mat-error *ngIf="current_organization_details.controls['current_ctc'].hasError('required')">
+                                    Current CTC is <strong>required</strong>...
+                                </mat-error>
                         </mat-form-field><pre></pre>
 
                     </div>

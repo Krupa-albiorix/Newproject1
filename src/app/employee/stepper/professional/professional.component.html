@@ -8,11 +8,17 @@
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Designation</mat-label>
                                 <input matInput name="designation" type="text" formControlName="designation">
+                                    <mat-error *ngIf="professionaldetails.controls['designation'].hasError('required')">
+                                        The Designation is <strong>required</strong>...
+                                    </mat-error>
                         </mat-form-field><pre></pre>
 
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Department</mat-label>
                                 <input matInput name="department" type="text" formControlName="department">
+                                    <mat-error *ngIf="professionaldetails.controls['department'].hasError('required')">
+                                        The Department is <strong>required</strong>...
+                                    </mat-error>
                         </mat-form-field><pre></pre>
 
                         <mat-form-field class="example-full-width" appearance="fill">
@@ -36,6 +42,9 @@
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Current Location</mat-label>
                                 <input matInput name="current_location" type="text" formControlName="current_location">
+                                <mat-error *ngIf="professionaldetails.controls['current_location'].hasError('required')">
+                                    Current Location is <strong>required</strong>...
+                                </mat-error>
                         </mat-form-field><pre></pre>
 
                         <mat-form-field class="example-full-width" appearance="fill">
@@ -46,6 +55,9 @@
                                 <mat-option value="1">Python</mat-option>
                                 <mat-option value="1">ASP.Net</mat-option>
                             </mat-select>
+                            <mat-error *ngIf="professionaldetails.controls['skill'].hasError('required')">
+                                The Skill is <strong>required</strong>...
+                            </mat-error>
                         </mat-form-field><pre></pre>
 
                         <div class="button-center">

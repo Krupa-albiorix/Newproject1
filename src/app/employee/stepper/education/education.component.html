@@ -22,25 +22,37 @@
                     <ng-container formArrayName="details">
                         <ng-container *ngFor="let detailForm of details.controls; let i = index">
                             <div class="user-class" [formGroupName]="i">
-                                <div >
+                                <div>
                                 <mat-form-field appearance="fill">
                                     <mat-label>Education Name</mat-label>
                                         <input matInput name="education_name" type="text" formControlName="education_name">
+                                        <mat-error *ngIf="detailForm.get('education_name')?.hasError('required')">
+                                            The Education name is <strong>required</strong>...
+                                        </mat-error>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="fill">
                                     <mat-label>University Name</mat-label>
                                         <input matInput name="university_name" type="text" formControlName="university_name">
+                                        <mat-error *ngIf="detailForm.get('university_name')?.hasError('required')">
+                                            The University name is <strong>required</strong>...
+                                        </mat-error>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="fill">
                                     <mat-label>Result</mat-label>
                                         <input matInput name="result" type="text" formControlName="result">
+                                        <mat-error *ngIf="detailForm.get('result')?.hasError('required')">
+                                            The Result is <strong>required</strong>...
+                                        </mat-error>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="fill">
                                     <mat-label>Year Of Passing</mat-label>
                                         <input matInput name="passing_year" type="number" formControlName="passing_year">
+                                        <mat-error *ngIf="detailForm.get('passing_year')?.hasError('required')">
+                                            The Passing Year is <strong>required</strong>...
+                                        </mat-error>
                                 </mat-form-field>
                             </div>
                                 <div appearance="fill" >

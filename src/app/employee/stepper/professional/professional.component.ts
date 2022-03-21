@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 interface Year {
@@ -17,20 +17,11 @@ interface Month {
 })
 export class ProfessionalComponent implements OnInit {
 
-  professionaldetails!: FormGroup;
+  @Input() professionaldetails : any;
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.professionaldetails = this._formBuilder.group({
-      designation: ['', Validators.required],
-      department: ['', Validators.required],
-      years: ['', Validators.required],
-      months: ['', Validators.required],
-      current_location: ['', Validators.required],
-      skill: ['', Validators.required],
-      uploadpdf: ['', Validators.required]
-    });
   }
 
   years: Year[] = [

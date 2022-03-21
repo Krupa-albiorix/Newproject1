@@ -22,7 +22,11 @@
     border-radius: 5px;
 }
 
+button {
+    width: auto;
+}
+
 .example-button-row {
     display: table-cell;
-    width: 490px;
+    width: 600px;
 }

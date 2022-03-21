@@ -1,32 +1,34 @@
+<form [formGroup]="stepperForm">
 <mat-stepper labelPosition="bottom" #stepper>
-    <mat-step [stepControl]="personaldetails">
+    <mat-step [stepControl]="stepperForm.controls['personaldetails']">
         <ng-template matStepLabel>Personal Detail</ng-template>
-        <app-personal></app-personal>
+        <app-personal [personaldetails]="stepperForm.controls['personaldetails']"></app-personal>
         <app-button></app-button>
     </mat-step>
-    <mat-step [stepControl]="bankdetails">
+    <mat-step [stepControl]="stepperForm.controls['bankdetails']">
         <ng-template matStepLabel>Bank Detail</ng-template>
-        <app-bank></app-bank>
+        <app-bank [bankdetails]="stepperForm.controls['bankdetails']"></app-bank>
         <app-button></app-button>
     </mat-step>
-    <mat-step [stepControl]="professionaldetails">
+    <mat-step [stepControl]="stepperForm.controls['professionaldetails']">
         <ng-template matStepLabel>Professional Detail</ng-template>
-        <app-professional></app-professional>
+        <app-professional [professionaldetails]="stepperForm.controls['professionaldetails']"></app-professional>
         <app-button></app-button>
     </mat-step>
-    <mat-step [stepControl]="educationdetails">
+    <mat-step [stepControl]="stepperForm.controls['educationdetails']">
         <ng-template matStepLabel>Education Detail</ng-template>
-        <app-education></app-education>
+        <app-education [educationdetails]="stepperForm.controls['educationdetails']"></app-education>
         <app-button></app-button>
     </mat-step>
-    <mat-step [stepControl]="experiencedetails">
+    <mat-step [stepControl]="stepperForm.controls['experiencedetails']">
         <ng-template matStepLabel>Experience Detail</ng-template>
-        <app-experience></app-experience>
+        <app-experience [experiencedetails]="stepperForm.controls['experiencedetails']"></app-experience>
         <app-button></app-button>
     </mat-step>
-    <mat-step [stepControl]="current_organization_details">
+    <mat-step [stepControl]="stepperForm.controls['current_organization_details']">
         <ng-template matStepLabel>Current Organization Detail</ng-template>
-        <app-current-organization></app-current-organization>
+        <app-current-organization [current_organization_details]="stepperForm.controls['current_organization_details']"></app-current-organization>
         <app-button></app-button>
     </mat-step>
 </mat-stepper>
+</form>

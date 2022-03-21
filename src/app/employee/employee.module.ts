@@ -13,7 +13,11 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { ButtonComponent } from './stepper/button/button.component';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
 
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import { ButtonComponent } from './stepper/button/button.component';
     MatComponentsModule,
     FormsModule,
     ReactiveFormsModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    NgxMaskModule.forRoot(maskConfig),
   ]
 })
 export class EmployeeModule { }
