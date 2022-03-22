@@ -8,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepperComponent implements OnInit {
 
+  personalDetail = 1;
+  bankDetail = 2;
+  professionalDetail = 3;
+  educationDetail = 4;
+  experienceDetail = 5;
+  current_organization_detail = 6;
+  linearMode = false;
   stepperForm! : FormGroup;
-  isLinear = false;
+  user: any = {};
   
   constructor(private formBuilder: FormBuilder) { }
 
@@ -62,7 +69,27 @@ export class StepperComponent implements OnInit {
       })
 
     });
-    
   }
 
+  onSubmit() {
+    if (this.stepperForm.valid) {
+      var id = new Date().getTime().toString();
+      console.log(this.stepperForm.value);
+      this.user = Object.assign(this.user, this.stepperForm.value);
+      this.user.id = id;
+      this.addUser(this.user);
+    }
+  }
+
+  addUser(user: any) {
+    let users = [];
+    if (localStorage.getItem('Users')) {
+      users = JSON.parse(localStorage.getItem('Users')!);
+      users = [user, ...users];
+    }
+    else {
+      users = [user];
+    }
+    localStorage.setItem('Users', JSON.stringify(users));
+  }
 }
