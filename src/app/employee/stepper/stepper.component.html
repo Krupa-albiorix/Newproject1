@@ -1,4 +1,4 @@
-<form [formGroup]="stepperForm">
+ <form [formGroup]="stepperForm">
     <mat-stepper labelPosition="bottom" #stepper [linear]="linearMode">
         <mat-step [stepControl]="stepperForm.controls['personaldetails']">
             <ng-template matStepLabel>Personal Detail</ng-template>
@@ -28,7 +28,7 @@
         <mat-step [stepControl]="stepperForm.controls['current_organization_details']">
             <ng-template matStepLabel>Current Organization Detail</ng-template>
             <app-current-organization [current_organization_details]="stepperForm.controls['current_organization_details']"></app-current-organization>
-            <app-button [stepperName]="current_organization_detail"></app-button>
+            <app-button [stepperName]="current_organization_detail" (eventEmitter)="onSubmit()"></app-button>
         </mat-step>
     </mat-stepper>
 </form>

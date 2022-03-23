@@ -1,15 +1,15 @@
 <div class="view-port">
     <div class="container">
 
-            <div class="example-button-row">
-                <button mat-raised-button color="primary" [routerLink]="['/']">Back To List</button>
-            </div>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" [routerLink]="['/']">Back To List</button>
+        </div>
 
-            <div class="example-button-row">
-                <button mat-raised-button matStepperPrevious [disabled]="stepperName === 1">Back</button>
-                <button mat-raised-button matStepperNext *ngIf="stepperName !== 6" color="primary">Next</button>
-                <button mat-raised-button type="submit" (click)="onSubmit()" *ngIf="stepperName === 6" color="primary">Finish</button>
-            </div>
+        <div class="example-button-row">
+            <button mat-raised-button matStepperPrevious [disabled]="stepperName === 1">Back</button>
+            <button mat-raised-button matStepperNext *ngIf="stepperName !== 6" color="primary">Next</button>
+            <button mat-raised-button type="submit" (click)="onSubmit()" *ngIf="stepperName === 6" color="primary">Finish</button>
+        </div>
         
     </div>
 </div>

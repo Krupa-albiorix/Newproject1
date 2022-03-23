@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -10,10 +10,10 @@ export class ButtonComponent implements OnInit {
 
   @Input() stepperName : any;
 
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() public eventEmitter = new EventEmitter<string>();
 
-  onSubmit () {
-    this.newItemEvent.emit();
+  onSubmit() {
+    this.eventEmitter.emit();
   }
 
   constructor() { }

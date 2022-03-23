@@ -22,6 +22,7 @@ export class ProfessionalComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
+    console.log(this.professionaldetails);
   }
 
   years: Year[] = [
