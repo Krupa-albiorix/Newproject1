@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-experience',

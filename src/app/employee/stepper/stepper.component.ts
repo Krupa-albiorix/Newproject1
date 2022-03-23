@@ -1,5 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stepper',
@@ -14,11 +15,11 @@ export class StepperComponent implements OnInit {
   educationDetail = 4;
   experienceDetail = 5;
   current_organization_detail = 6;
-  linearMode = false;
+  linearMode = true;
   stepperForm! : FormGroup;
   user: any = {};
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private route:Router) { }
 
   ngOnInit(): void {
     this.stepperForm = this.formBuilder.group({
@@ -51,7 +52,6 @@ export class StepperComponent implements OnInit {
         months: ['', [Validators.required]],
         current_location: ['', [Validators.required]],
         skill: ['', [Validators.required]],
-        // upload: ['', [Validators.required]]
       }),
 
       educationdetails : this.formBuilder.group({
@@ -72,10 +72,7 @@ export class StepperComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("test");
-    console.log(this.stepperForm);
     if (this.stepperForm.valid) {
-      // console.log(this.stepperForm);
       var id = new Date().getTime().toString();
       console.log(this.stepperForm.value);
       this.user = Object.assign(this.user, this.stepperForm.value);
@@ -94,5 +91,6 @@ export class StepperComponent implements OnInit {
       users = [user];
     }
     localStorage.setItem('Users', JSON.stringify(users));
+    this.route.navigate(['/']);
   }
 }

@@ -1,34 +1,43 @@
  <form [formGroup]="stepperForm">
+
     <mat-stepper labelPosition="bottom" #stepper [linear]="linearMode">
+
         <mat-step [stepControl]="stepperForm.controls['personaldetails']">
             <ng-template matStepLabel>Personal Detail</ng-template>
             <app-personal [personaldetails]="stepperForm.controls['personaldetails']"></app-personal>
             <app-button [stepperName]="personalDetail"></app-button>
         </mat-step>
+
         <mat-step [stepControl]="stepperForm.controls['bankdetails']">
             <ng-template matStepLabel>Bank Detail</ng-template>
             <app-bank [bankdetails]="stepperForm.controls['bankdetails']"></app-bank>
             <app-button [stepperName]="bankDetail"></app-button>
         </mat-step>
+
         <mat-step [stepControl]="stepperForm.controls['professionaldetails']">
             <ng-template matStepLabel>Professional Detail</ng-template>
             <app-professional [professionaldetails]="stepperForm.controls['professionaldetails']"></app-professional>
             <app-button [stepperName]="professionalDetail"></app-button>
         </mat-step>
+
         <mat-step [stepControl]="stepperForm.controls['educationdetails']">
             <ng-template matStepLabel>Education Detail</ng-template>
             <app-education [educationdetails]="stepperForm.controls['educationdetails']"></app-education>
             <app-button [stepperName]="educationDetail"></app-button>
         </mat-step>
+
         <mat-step [stepControl]="stepperForm.controls['experiencedetails']">
             <ng-template matStepLabel>Experience Detail</ng-template>
             <app-experience [experiencedetails]="stepperForm.controls['experiencedetails']"></app-experience>
             <app-button [stepperName]="experienceDetail"></app-button>
         </mat-step>
+
         <mat-step [stepControl]="stepperForm.controls['current_organization_details']">
             <ng-template matStepLabel>Current Organization Detail</ng-template>
             <app-current-organization [current_organization_details]="stepperForm.controls['current_organization_details']"></app-current-organization>
             <app-button [stepperName]="current_organization_detail" (eventEmitter)="onSubmit()"></app-button>
         </mat-step>
+
     </mat-stepper>
+    
 </form>

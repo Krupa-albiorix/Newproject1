@@ -31,20 +31,12 @@
     margin-bottom: 40px;
 }
 
-.content button {
+button {
     size: 15px;
     bottom: 20px;
     width: auto;
 }
 
-.content .user-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    margin: 20px 0 12px 0;
-}
-
-.container .user-data {
-    font-size: 10px;
-    display: flex;
-}
+table {
+    width: 100%;
+  }

@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeListComponent implements OnInit {
 
+  dataSource = [];
+
+  displayedColumns: string[] = ['firstname', 'department', 'designation', 'email', 'mobilenumber', 'uploadimg'];
+
+  localStorage: any;
+  data: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.data = localStorage.getItem('Users');
+    this.dataSource = JSON.parse(localStorage.getItem('Users')!);
+    console.log(this.data);
   }
 
 }

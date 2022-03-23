@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 interface Year {
   value: number;
@@ -19,7 +18,7 @@ export class ProfessionalComponent implements OnInit {
 
   @Input() professionaldetails : any;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor() {}
 
   ngOnInit() {
     console.log(this.professionaldetails);

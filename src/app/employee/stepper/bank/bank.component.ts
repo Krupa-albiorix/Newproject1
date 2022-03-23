@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-bank',
@@ -9,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class BankComponent implements OnInit {
   @Input() bankdetails: any;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor() {}
 
   ngOnInit() {
     console.log(this.bankdetails);

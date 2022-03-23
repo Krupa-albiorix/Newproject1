@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-personal',
@@ -10,7 +9,7 @@ export class PersonalComponent implements OnInit {
 
   @Input() personaldetails: any; 
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor() {}
 
   ngOnInit() {
   }
