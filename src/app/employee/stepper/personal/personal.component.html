@@ -68,19 +68,25 @@
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker></mat-datepicker>
                                     <mat-error *ngIf="personaldetails.controls['date'].hasError('required')">
-                                        The Bank Name is <strong>required</strong>...
+                                        The Birth date is <strong>required</strong>...
                                     </mat-error>
                     </mat-form-field><pre></pre>
 
-                    <div class="button-center">
+                    <div class="button-center" *ngIf="!personaldetails.controls['uploadimg'].value">
                         <button mat-raised-button color="primary">
                             <label for="file-upload">
                                 Upload Image
                             </label>
                         </button>
-                            <input id="file-upload" type="file" name="uploadimg" accept="image/png, image/jpeg" formControlName="uploadimg"/>
+                            <input id="file-upload" type="file" name="uploadimg" accept="image/png, image/jpeg" (change)="updateimg($event)"/>
                             <h6>Only JPG OR PNG file are allowed.</h6>    
                     </div>
+
+                    <div class="button-center" *ngIf="personaldetails.controls['uploadimg'].value">
+                        {{personaldetails.controls['uploadimg'].value}}
+                        <mat-icon (click)="personaldetails.controls['uploadimg'].setValue(null)" color="primary">close</mat-icon>
+                    </div>
+                    
 
                     <mat-form-field class="form-field" appearance="fill">
                         <mat-label>Present Address</mat-label>

@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'stepper',
     component: StepperComponent
+  },
+  {
+    path: 'stepper/:id',
+    component: StepperComponent
   }
 ];
 

@@ -1,6 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-stepper',
@@ -18,10 +18,67 @@ export class StepperComponent implements OnInit {
   linearMode = true;
   stepperForm! : FormGroup;
   user: any = {};
+  userId = null;
   
-  constructor(private formBuilder: FormBuilder, private route:Router) { }
+  constructor(private formBuilder: FormBuilder, private route1: Router, private route: ActivatedRoute) { 
+    this.createForm()
+    this.route.params.subscribe((res) => {
+      this.userId = res['id'];
+      if(this.userId){
+        this.patchFormValue() 
+      }
+    })
+  }
 
   ngOnInit(): void {
+
+  }
+
+  patchFormValue() {
+    let users = JSON.parse(localStorage.getItem('Users')!);
+    const currentUser = users.find((m: any) => m.id == this.userId);
+    this.stepperForm.patchValue(currentUser);
+  }
+
+  onSubmit() {
+    if (this.stepperForm.valid) {
+      if (!this.userId) {
+        var id = new Date().getTime().toString();
+        console.log(this.stepperForm.value);
+        this.user = Object.assign(this.user, this.stepperForm.value);
+        this.user.id = id;
+        this.addUser(this.user);
+      }
+      else {
+        this.updateUser();
+      }
+    }
+  }
+
+  addUser(user: any) {
+    let users = [];
+    if (localStorage.getItem('Users')) {
+      users = JSON.parse(localStorage.getItem('Users')!);
+      users = [user, ...users];
+    }
+    else {
+      users = [user];
+    }
+    localStorage.setItem('Users', JSON.stringify(users));
+    this.route1.navigate(['/']);
+  }
+
+  updateUser() {
+    const users = JSON.parse(localStorage.getItem('Users')!);
+    if (users) {
+      const currentUserindex = users.findIndex((a: any) => a.id == this.userId);
+      users[currentUserindex] = {...this.stepperForm.value, id: this.userId};
+      localStorage.setItem('Users', JSON.stringify(users));
+    this.route1.navigate(['/']);
+    }
+  }
+
+  createForm() {
     this.stepperForm = this.formBuilder.group({
       personaldetails : this.formBuilder.group({
         firstname: ['', [Validators.required]],
@@ -52,6 +109,7 @@ export class StepperComponent implements OnInit {
         months: ['', [Validators.required]],
         current_location: ['', [Validators.required]],
         skill: ['', [Validators.required]],
+        uploadresume: ['', [Validators.required]]
       }),
 
       educationdetails : this.formBuilder.group({
@@ -69,28 +127,5 @@ export class StepperComponent implements OnInit {
       })
 
     });
-  }
-
-  onSubmit() {
-    if (this.stepperForm.valid) {
-      var id = new Date().getTime().toString();
-      console.log(this.stepperForm.value);
-      this.user = Object.assign(this.user, this.stepperForm.value);
-      this.user.id = id;
-      this.addUser(this.user);
-    }
-  }
-
-  addUser(user: any) {
-    let users = [];
-    if (localStorage.getItem('Users')) {
-      users = JSON.parse(localStorage.getItem('Users')!);
-      users = [user, ...users];
-    }
-    else {
-      users = [user];
-    }
-    localStorage.setItem('Users', JSON.stringify(users));
-    this.route.navigate(['/']);
   }
 }

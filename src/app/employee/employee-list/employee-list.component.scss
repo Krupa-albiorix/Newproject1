@@ -2,11 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // font-family: sans-serif;
 }
 
 .view-port {
-    height: 50vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,3 +39,7 @@ button {
 table {
     width: 100%;
   }
+
+.black-color {
+    color: black;
+}

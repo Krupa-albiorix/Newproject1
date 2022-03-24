@@ -32,11 +32,19 @@
                             <td mat-cell *matCellDef="let datas"> {{datas.personaldetails.mobilenumber}} </td>
                         </ng-container>
 
-                        <ng-container matColumnDef="uploadimg">
+                        <ng-container matColumnDef="uploadresume">
                             <th mat-header-cell *matHeaderCellDef> Resume </th>
-                            <td mat-cell *matCellDef="let datas"> {{datas.personaldetails.uploadimg}} </td>
+                            <td mat-cell *matCellDef="let datas"> {{datas.professionaldetails.uploadresume}} </td>
                         </ng-container>
-                    
+
+                        <ng-container matColumnDef="updatedata">
+                            <th mat-header-cell *matHeaderCellDef></th>
+                            <td mat-cell *matCellDef="let datas"> 
+                                <a [routerLink]="['/stepper', datas.id]">
+                                    <mat-icon class="black-color">edit</mat-icon>
+                                </a> 
+                            </td>
+                        </ng-container>                    
                     
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

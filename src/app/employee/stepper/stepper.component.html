@@ -35,7 +35,7 @@
         <mat-step [stepControl]="stepperForm.controls['current_organization_details']">
             <ng-template matStepLabel>Current Organization Detail</ng-template>
             <app-current-organization [current_organization_details]="stepperForm.controls['current_organization_details']"></app-current-organization>
-            <app-button [stepperName]="current_organization_detail" (eventEmitter)="onSubmit()"></app-button>
+            <app-button [stepperName]="current_organization_detail" (eventEmitter)="onSubmit()" (eventEmitter)="updateUser()"></app-button>
         </mat-step>
 
     </mat-stepper>

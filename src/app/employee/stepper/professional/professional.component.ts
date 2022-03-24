@@ -21,7 +21,11 @@ export class ProfessionalComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.professionaldetails);
+    
+  }
+
+  updateresume(event: any) {
+    this.professionaldetails.controls['uploadresume'].setValue(event.target.files[0].name);
   }
 
   years: Year[] = [

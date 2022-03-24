@@ -9,7 +9,7 @@ export class EmployeeListComponent implements OnInit {
 
   dataSource = [];
 
-  displayedColumns: string[] = ['firstname', 'department', 'designation', 'email', 'mobilenumber', 'uploadimg'];
+  displayedColumns: string[] = ['firstname', 'department', 'designation', 'email', 'mobilenumber', 'uploadresume', 'updatedata'];
 
   localStorage: any;
   data: any;
@@ -19,7 +19,6 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit(): void {
     this.data = localStorage.getItem('Users');
     this.dataSource = JSON.parse(localStorage.getItem('Users')!);
-    console.log(this.data);
   }
 
 }

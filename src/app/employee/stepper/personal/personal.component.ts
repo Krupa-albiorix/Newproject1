@@ -13,4 +13,8 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  updateimg(event: any) {
+    this.personaldetails.controls['uploadimg'].setValue(event.target.files[0].name);
+  }
 }
